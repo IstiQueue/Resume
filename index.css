@@ -1,0 +1,782 @@
+/* ==================================*/
+/* start of basic stuff*/
+*,
+*::before
+*::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    /*get rid of horizontal scrolling*/
+    overflow-x:hidden;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /*for footer and nav to stay at their intended places*/
+    display: flex;
+    flex-direction: column;
+}
+/*just to make sure something funny doesn't happen to the pics */
+img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+main {
+    padding: 0em;
+    margin: 0;
+    /*for footer and nav to stay at their intended places*/
+    flex: 1;
+}
+
+/*START OF ROOT*/
+:root {
+    --fw_reg: 500;
+    --fw_bold: 700;
+    
+    --blue: #83D1C4;
+    --purple: #78517C;
+    --orange: #F17950;
+    --gray: #707070;
+
+    --fs_h1: 4.5rem;
+    --fs_h2: 3rem;
+    --fs_h3: 1.5rem;
+    --fs_p: 1rem;
+}
+
+@media screen and (max-width: 435px) {
+    :root {
+        --fs_h1: 2.25rem;
+        --fs_h2: 1.625rem;
+        --fs_h3: 1rem;
+        --fs_p: 0.5rem;
+    }
+}
+/*END OF ROOT*/
+
+
+
+/* START OF FONT STUFF */
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+h1 {
+    font-size: var(--fs_h1);
+    font-weight: var(--fw_bold);
+}
+h2 {
+    font-size: var(--fs_h2);
+    font-weight: var(--fs_bold);
+}
+h3 {
+    font-size: var(--fs_h3);
+    font-weight: var(--fs_reg);
+}
+p {
+    font-size: var(--fs_p);
+    font-weight: var(--fw_reg);
+}
+/* END OF FONT STUFF*/
+
+/* end of basic stuff*/
+/*===================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+/*START OF NAVIGATION*/
+nav {
+    padding: 1.3em;
+}
+nav ul {
+    width: auto;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+}
+nav li {
+    display: inline-block;
+    padding: 0 4.4em;
+}
+nav a {
+    font-size: var(--fs_h3);
+    color: var(--gray);
+    text-decoration: none;
+    /*this is for the animated slide on the bottom*/
+    position: relative;
+}
+/*this is the thing that is going to make the slide thing move*/
+nav a::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--orange);
+    top: 2rem;
+    width: 0;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+}
+nav a:hover::before {
+    width: 100%;
+}
+nav a:hover {
+    color: var(--orange);
+}
+/*tablet screen settings*/
+@media screen and (max-width: 780px) {
+    nav li {
+        padding: 1.5em;
+    }
+}
+/*phone screen settings*/
+@media screen and (max-width: 435px) {
+    nav li {
+        padding: 0.75em;
+    }
+    nav a::before {
+        top: 1.5em;
+    }
+}
+
+/* END OF NAVIGATION*/
+/*===================================================================================*/
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+/* NOW STARTING FOOTER */
+footer {
+    background-color: var(--orange);
+    width: 100%;
+}
+footer h3 {
+    color: white;
+    text-align: center;
+}
+.footer_text {
+    padding: 0.5em;
+}
+.footer_logos {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1em;
+}
+.footer_logos a {
+    padding: 0 0.2em;
+}
+/* END OF FOOTER */
+/*===================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+/*START OF MAIN*/
+
+
+
+
+
+
+/*=====================================*/
+/*start of section1*/
+.quote {
+    padding: 4em;
+    float: left;
+    width: 36.5em;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+}
+.quote h3 {
+    color: gray;
+}
+.quoteauthor h3 {
+    text-align: end;
+}
+.quotetext {
+    text-align: center;
+}
+@media screen and (max-width: 1100px) {
+    .quote {
+        width: 25em;
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 780px) {
+    .quote {
+        width: auto;
+        display: inline-block;
+    }
+}
+/*phone screen*/
+@media screen and (max-width: 435px) {
+    .quote {
+        padding: 1em;
+        margin: 1em;
+    }
+}
+/*end of section1*/
+/*=====================================*/
+
+
+
+
+
+
+/*=====================================*/
+/*start of circles_main*/
+.main_circles {
+    display: inline-block;
+    margin-top: -7em;
+    width: 100%;
+    position: relative;
+}
+.main_circles img {
+    margin-right: 0;
+    width: 100%;
+}
+.main_circles .bluebgtop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+}
+@media screen and (max-width: 780px) {
+    .main_circles {
+        margin-top: -1em;
+    }
+}
+
+
+
+
+
+
+
+/*=====================================*/
+/*start of section2*/
+.article_link{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    place-items: center;
+}
+.section2 {
+    margin-top: -1em;
+    padding-bottom: 2em;
+    position: relative;
+}
+.bluebg {
+    height: 100%;
+    width: 100%;
+    background-color: var(--blue);
+    z-index: -100;
+    position: absolute;
+}
+.myblog_text {
+    padding: 2em;
+}
+.section2 h1, .section2 .myblog_text h3 {
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/*start of carousel or slider*/
+#slider {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+ }
+ #slider input[type=radio] {
+    display: none;
+ }
+ #slider label {
+    cursor:pointer;
+    text-decoration: none;
+ }
+ #slides {
+    padding: 10px;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+ }
+ #overflow {
+    width: 100%;
+    overflow: hidden;
+ }
+ #slide1:checked ~ #slides .inner {
+    margin-left: 0;
+ }
+ #slide2:checked ~ #slides .inner {
+    margin-left: -100%;
+ }
+ #slide3:checked ~ #slides .inner {
+    margin-left: -200%;
+ }
+ #slide4:checked ~ #slides .inner {
+    margin-left: -300%;
+ }
+ #slides .inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 0;
+    height: 100%;
+ }
+ #slides .slide {
+    height: 21em;
+    width: 25%;
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+ }
+.slide .slide-content {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     text-align: start;
+     justify-content: center;
+     align-items: center;
+ }
+
+
+
+
+.text h2 {
+    color: var(--purple);
+    font-weight: var(--fw_bold);
+    margin: 0 0;
+    /*this is for the animated thing*/
+    position: relative; 
+}
+/*the animated thing*/
+.text h2::before {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: var(--purple);
+    top: 3.25rem;
+    width: 0;
+    position: absolute;
+    transition: all ease-in-out 400ms;
+}
+
+.text h2:hover::before {
+    width: 20%;
+}
+/*end of the animated thing*/
+
+
+
+
+
+.slide .slide-content .text h3 {
+    color: var(--gray);
+    margin: 0;
+    padding-top: 1em;
+}
+.slide .slide-content img {
+    object-fit: cover; 
+    height: 17.5em;
+    width: 17.5em;
+    padding: 1em;
+}
+.slide .slide-content .text {
+    padding: 10px;
+}
+
+
+
+ #slides .slide_1, #slides .slide_2, #slides .slide_3, #slides .slide_4 {
+    background: white;
+ }
+
+ #bullets {
+    margin: 1em;
+    text-align: center;
+ }
+ #bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius:100%;
+    background: var(--gray);
+    margin: 0 10px;
+ }
+ #slide1:checked ~ #bullets label:nth-child(1),
+ #slide2:checked ~ #bullets label:nth-child(2),
+ #slide3:checked ~ #bullets label:nth-child(3),
+ #slide4:checked ~ #bullets label:nth-child(4) {
+    background: var(--orange);
+ }
+ @media screen and (max-width: 900px) {
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1),
+    #slide1:checked ~ #controls label:nth-last-child(2),
+    #slide2:checked ~ #controls label:nth-last-child(3),
+    #slide3:checked ~ #controls label:nth-last-child(4),
+    #slide4:checked ~ #controls label:nth-last-child(1) {
+       margin: 0;
+    }
+    #slider h2 {
+        font-size: var(--fs_h3);
+    }
+    #slider h3 {
+        font-size: var(--fs_p);
+    }
+ }
+ @media screen and (max-width: 1024px) {
+     .slide .slide-content img {
+         height: 15em;
+         width: 15em;
+     }
+ }
+ @media screen and (max-width: 500px) {
+     .slide .slide-content {
+         flex-direction: column;
+     }
+     #slides .slide {
+         height: 25em;
+     }
+     .slide .slide-content img {
+        height: 12em;
+        width: 12em;
+    }
+ }
+ @media screen and (max-width: 435px) {
+    #slider h2 {
+        font-size: var(--fs_h2);
+    }
+    #slider h3 {
+        font-size: var(--fs_h3);
+    }
+ }
+ /* end of carousel or slider*/
+
+/*end of section2*/
+/*=====================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+/*START OF BLOG*/
+
+/*=====================================*/
+/*start of section2*/
+.bluebgthing img {
+    width: 1440px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+    margin-right: 0;
+    margin: 0;
+    padding: 0;
+}
+/*end of section2*/
+/*=====================================*/
+
+
+
+
+
+/*=====================================*/
+/*start of section3*/
+.section3 .articles .slide-content {
+    background-color: white;
+    border: 2px solid var(--blue);
+    margin: 1em;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+}
+.section3 .articles {
+    margin: 2em;
+}
+
+
+.articles .slide-content .text h2 {
+    color: var(--purple);
+    font-weight: var(--fw_bold);
+    margin: 0 0;
+}
+.articles .slide-content .text h3 {
+    color: var(--gray);
+    margin: 0;
+    padding-top: 1em;
+}
+.articles .slide-content img {
+    object-fit: cover; 
+    height: 17.5em;
+    width: 17.5em;
+    padding: 1em;
+}
+.articles .slide-content .text {
+    padding: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .articles .slide-content img {
+        height: 15em;
+        width: 15em;
+    }
+}
+@media screen and (max-width: 500px) {
+    .section3 .articles .slide-content {
+        flex-direction: column;
+    }
+    .articles .slide-content img {
+       height: 12em;
+       width: 12em;
+   }
+}
+@media screen and (max-width: 435px) {
+    .section3 h2 {
+        font-size: var(--fs_h2);
+    }
+    .section3 h3 {
+        font-size: var(--fs_h3);
+    }
+ }
+
+/*end of section3*/
+/*=====================================*/
+
+
+
+/*END OF BLOG*/
+/*===================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+/*START OF ABOUT ME*/
+
+.aboutme_container {
+    padding: 4em;
+    float: right;
+    width: 35.5em;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+}
+.aboutme_text h3, .aboutme_text h1 {
+    color: gray;
+    text-align: center;
+    margin: 0.25em 0;
+}
+@media screen and (max-width: 1100px) {
+    .aboutme_container {
+        width: 25em;
+        display: inline-block;
+    }
+}
+@media screen and (max-width: 780px) {
+    .aboutme_container {
+        width: auto;
+        display: inline-block;
+    }
+}
+/*phone screen*/
+@media screen and (max-width: 440px) {
+    .aboutme_container {
+        padding: 1em;
+        margin: 1em;
+    }
+}
+
+.aboutme_circles {
+    display: inline-block;
+    margin-top: -25em;
+    width: 100%;
+    margin-bottom: -1em;
+}
+.aboutme_circles img {
+    height: 100%;
+}
+@media screen and (max-width: 780px) {
+    .aboutme_circles {
+        display: inline-block;
+        margin-top: 0em;
+    }
+}
+
+
+/*END OF ABOUT ME*/
+/*===================================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================================*/
+/*START OF ARTICLE1*/
+
+.article_text {
+    padding: 4em;
+}
+.article_text h1, .article_text h3 {
+    color: var(--gray);
+}
+.article_img {
+    display: grid;
+    place-items: center;
+    padding-bottom: 4em;
+}
+.article_img img {
+    height: 18em;
+    width: 18em;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*END OF ARTICLE1*/
+/*===================================================================================*/
