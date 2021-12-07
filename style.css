@@ -35,6 +35,7 @@ img {
     --fs_h1: 2.5rem;
     --fs_h2: 1.5rem;
     --fs_h3: 1.2rem;
+    --fs_h4: 0.75rem;
     --fs_p: 1rem;
 }
 
@@ -43,6 +44,7 @@ img {
         --fs_h1: 1.6rem;
         --fs_h2: 1rem;
         --fs_h3: 0.75rem;
+        --fs_h4: 0.3rem;
         --fs_p: 0.6rem;
     }
 }
@@ -76,6 +78,13 @@ h3:hover {
 p {
     font-size: var(--fs_p);
     font-weight: var(--fw_reg);
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: var(--blue);
 }
 /* END OF FONT STUFF*/
 
@@ -196,4 +205,52 @@ td {
 .internships div .desc{
   padding: 1em 0;
   margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a[data-tool-tip] {
+  position: relative;
+}
+a[data-tool-tip]::after {
+  content: attr(data-tool-tip);
+  display: block;
+  position: absolute;
+  background-color: var(--lightblue);
+  padding: 0.5em 0.7em;
+  color: var(--darkblue);
+  border-radius: 6px;
+  font-size: var(--fs_h4);
+  font-weight: var(--fw_reg);
+  left:0;
+  bottom: 0;
+  white-space: nowrap;
+  transform: scale(0);
+  transition: transform ease-in-out 150ms;
+}
+
+a[data-tool-tip]:hover::after {
+  transform: scale(1);
+  bottom: 100%
 }
