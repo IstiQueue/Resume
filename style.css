@@ -132,6 +132,13 @@ a:hover {
 .main_information p:hover {
   color: var(--darkblue)
 }
+.main_information .note p:hover {
+  color: var(--blue);
+}
+.main_information .note p {
+  width: 30em;
+}
+
 .main_information .contact_info {
   margin: 1em 0;
 }
@@ -154,6 +161,11 @@ td {
   }
   table {
     margin: 0 auto;
+  }
+  .main_information .note p {
+    width: 24em;
+    margin: 0 auto;
+    padding: 0 2em;
   }
 }
 @media screen and (max-width: 400px) {
