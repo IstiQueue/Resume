@@ -223,7 +223,9 @@ td {
 
 
 
-
+.side .websites .w3 a, .side .websites .w3 p  {
+  color: gray;
+}
 
 
 
